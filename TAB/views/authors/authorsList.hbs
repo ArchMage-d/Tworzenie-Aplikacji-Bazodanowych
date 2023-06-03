@@ -1,0 +1,45 @@
+<h2>Lista autorów</h2>
+<ul>
+    <b>ID, Imię, Nazwisko</b>
+    {{#each authorsList}}
+        <li>
+            {{this.author_id}},
+            {{this.name}},
+            {{this.surname}}
+        </li>
+    {{/each}}
+</ul>
+<hr>
+<h2>Dodaj autora</h2>
+<form action="/authors" method="POST">
+    <label>
+        Imię:
+        <input name="name" type="text">
+    </label>
+    <br>
+    <label>
+        Nazwisko:
+        <input name="surname" type="text">
+    </label>
+    <br><br>
+    <button>Zapisz</button>
+</form>
+<hr>
+<h2>Zaktualizuj autora</h2>
+<form action="/authors?_method=PATCH" method="POST">
+    <label>
+        ID:
+        <input name="author_id" type="number" min="1">
+    </label> <br>
+    <label>
+        Imie:
+        <input name="name" type="text">
+    </label> <br>
+    <label>
+        Nazwisko:
+        <input name="surname" type="text">
+    </label> <br> <br>
+    <button>Zaktualizuj</button>
+</form>
+<hr>
+

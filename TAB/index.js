@@ -1,13 +1,13 @@
 const express = require("express");
 require('express-async-errors');
+require('./utils/db');
 const methodOverride = require("method-override");
 const {engine} = require("express-handlebars");
 const {handleError} = require("./utils/errors");
 const {homeRouter} = require("./routers/home");
 const {authorsRouter} = require("./routers/authors");
-require('./utils/db');
-const {handlebarsHelpers} = require("./utils/handlebars-helpers");
 const {reviewsRouter} = require("./routers/reviews");
+const {handlebarsHelpers} = require("./utils/handlebars-helpers");
 
 const app = express();
 
